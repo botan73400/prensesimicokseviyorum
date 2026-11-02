@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beyza ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #16091f;
+    color: white;
+    font-family: Georgia, serif;
+    overflow-x: hidden;
+}
+
+/* Arka plan */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+    radial-gradient(circle at top, #702c83, #16091f 75%);
+    z-index: -2;
+}
+
+#particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Menü */
+
+header {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    max-width: 1200px;
+    padding: 17px 25px;
+    border: 1px solid #ff8bdc77;
+    border-radius: 50px;
+    background: #1c0b2bd9;
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.logo {
+    color: #ff9cde;
+    font-size: 27px;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #ff8bdc;
+    text-shadow: 0 0 15px pink;
+}
+
+/* Ana ekran */
+
+.hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    max-width: 1250px;
+    margin: auto;
+    padding: 120px 30px 60px;
+}
+
+h1 {
+    font-size: clamp(65px, 10vw, 120px);
+    color: #ff9cde;
+    text-shadow: 0 0 25px #ff45bc;
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 15px #ff45bc; }
+    to { text-shadow: 0 0 55px #ff45bc; }
+}
+
+.hero h2 {
+    color: #e8baff;
+    margin: 15px 0;
+    font-size: 28px;
+    font-weight: normal;
+}
+
+.hero p {
+    line-height: 1.9;
+    color: #ead8f5;
+    font-size: 18px;
+}
+
+button {
+    margin-top: 25px;
+    padding: 15px 28px;
+    border: 1px solid pink;
+    border-radius: 40px;
+    background: linear-gradient(120deg, #a83cba, #fa69bd);
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    transition: .3s;
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px #ff68ce;
+}
+
+/* Anime görseli */
+
+.image-box {
+    position: relative;
+}
+
+.image-box img {
+    width: 100%;
+    border-radius: 25px;
+    border: 2px solid #ff9cde;
+    box-shadow: 0 0 35px #ff5bc6,
+                0 0 80px #9e58ff;
+    animation: floating 4s ease-in-out infinite;
+}
+
+@keyframes floating {
+    50% { transform: translateY(-12px); }
+}
+
+/* Bölümler */
+
+section {
+    max-width: 950px;
+    margin: auto;
+    padding: 100px 25px;
+    text-align: center;
+}
+
+.title {
+    font-size: 45px;
+    color: #ffb4e7;
+    margin-bottom: 25px;
+    text-shadow: 0 0 20px #ed62d1;
+}
+
+.card {
+    background: #ffffff0c;
+    border: 1px solid #ff9cde55;
+    border-radius: 25px;
+    padding: 40px;
+    text-align: left;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 35px #b04bce22;
+}
+
+.letter {
+    font-size: 19px;
+    line-height: 2;
+    color: #ffeafa;
+    white-space: pre-line;
+}
+
+.letter strong {
+    color: #ff9cde;
+}
+
+/* Mesajlar */
+
+.message {
+    margin-top: 25px;
+    min-height: 60px;
+    font-size: 20px;
+    color: #ffb4e7;
+}
+
+/* Kalpler */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    color: #ff83d5;
+    font-size: 25px;
+    animation: rise 12s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+    15% { opacity: 1; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 50px 15px;
+    color: #ffb4e7;
+}
+
+/* Telefon uyumluluğu */
+
+@media(max-width: 800px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    nav {
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 25px;
+    }
+
+    .title {
+        font-size: 34px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<header>
+    <a class="logo" href="#">Beyza ♡</a>
+
+    <nav>
+        <a href="#home">Ana Sayfa</a>
+        <a href="#mektup">Özür Dilerim</a>
+        <a href="#kalbim">Kalbimden</a>
+        <a href="#mesaj">Mesajlar</a>
+    </nav>
+</header>
+
+<!-- ANA SAYFA -->
+
+<div class="hero" id="home">
+
+    <div>
+        <h1>BEYZA</h1>
+
+        <h2>Kalbimin En Güzel Hikâyesi ♡</h2>
+
+        <p>
+            Bu sayfayı sana kalbimdeki bütün
+            güzellikleri anlatmak için hazırladım.
+            Çünkü bazı insanlar bir kez hayatına
+            girer ve kalbinde özel bir yer edinir.
+        </p>
+
+        <button onclick="git('mektup')">
+            Sana söylemek istediklerim ❤️
+        </button>
+    </div>
+
+    <div class="image-box">
+        <img src="couple.png" alt="Beyza ve Botan anime çift">
+    </div>
+
+</div>
+
+<!-- ÖZÜR MEKTUBU -->
+
+<section id="mektup">
+
+    <h2 class="title">Sana Bir Mektubum Var 💌</h2>
+
+    <div class="card">
+
+        <div class="letter">
+Beyza...
+
+Seni kırdığımı biliyorum.
+Söylediklerimin ve yaptıklarımın seni ne kadar
+üzdüğünü şimdi daha iyi anlıyorum.
+
+Keşke bazı anlarda durup düşünseydim.
+Keşke seni daha dikkatli dinleseydim.
+Keşke kalbini kırmasaydım.
+
+Özür dilerim Beyza.
+
+Senden hemen her şeyi unutmanı beklemiyorum.
+Kızgın olmanı da anlıyorum.
+Sadece hissettiklerimi bilmeni istiyorum.
+
+Sen benim için çok değerlisin.
+Birlikte yaşadığımız güzel anılar benim için
+her zaman özel kalacak.
+
+Sana baskı yapmak için değil,
+kalbimden geçenleri anlatmak için
+bu sayfayı hazırladım.
+
+<strong>İyi ki hayatıma dokundun Beyza. ❤️</strong>
+
+— Botan
+        </div>
+
+    </div>
+
+</section>
+
+<!-- KALBİMDEN -->
+
+<section id="kalbim">
+
+    <h2 class="title">Sana Dair Her Şey 🌸</h2>
+
+    <p>
+        Bazen kelimeler yetmez ama yine de
+        insan anlatmak ister.
+    </p>
+
+    <br>
+
+    <h2>🌷 Varlığın benim için özel.</h2>
+    <br>
+    <h2>✨ Gülüşün en güzel anılarımdan.</h2>
+    <br>
+    <h2>💗 Sana verdiğim değer gerçek.</h2>
+
+</section>
+
+<!-- SÜRPRİZ MESAJ -->
+
+<section id="mesaj">
+
+    <h2 class="title">Sana Küçük Bir Sürprizim Var</h2>
+
+    <button onclick="mesajGoster()">
+        Kalbime Dokun ❤️
+    </button>
+
+    <div class="message" id="message">
+        Burada sana özel mesajlar var...
+    </div>
+
+</section>
+
+<footer>
+    BEYZA İÇİN BOTAN'IN KALBİNDEN HAZIRLANDI ♡
+</footer>
+
+<script>
+
+// Sayfa kaydırma
+
+function git(id) {
+    document.getElementById(id)
+    .scrollIntoView({behavior:"smooth"});
+}
+
+// Uçuşan kalpler
+
+function kalpOlustur() {
+
+    const kalp = document.createElement("div");
+
+    kalp.className = "heart";
+
+    kalp.innerHTML = ["♡","♥","💗","✧"][Math.floor(Math.random()*4)];
+
+    kalp.style.left = Math.random()*100 + "vw";
+
+    kalp.style.animationDuration =
+    (8 + Math.random()*8) + "s";
+
+    document.body.appendChild(kalp);
+
+    setTimeout(() => kalp.remove(),16000);
+}
+
+setInterval(kalpOlustur,500);
+
+// Sürpriz mesajlar
+
+const mesajlar = [
+    "Seni kırdığım için gerçekten üzgünüm Beyza. ❤️",
+    "Güzel anılarımız benim için çok kıymetli.",
+    "Seni dinlemeyi ve anlamayı öğrenmek istiyorum.",
+    "Sana verdiğim değeri davranışlarımla göstermek istiyorum.",
+    "İyi ki varsın Beyza. 💗",
+    "Bu sayfadaki bütün kalpler sana..."
+];
+
+let sayac = 0;
+
+function mesajGoster() {
+
+    document.getElementById("message").innerHTML =
+    mesajlar[sayac % mesajlar.length];
+
+    sayac++;
+}
+
+</script>
+
+</body>
+</html>
